@@ -1,34 +1,56 @@
 import {useContext} from 'react';
 import {openUrl} from "../../../../modal/functions/gets_funcs";
 import {gitUrl, instaUrl, scetchfabUrl, telegramUrl} from "../../../../modal/configs/urls";
-import {gitImageUrl, instaImageUrl, scetchfabeImageUrl, telegramImageUrl} from "../../../../modal/configs/images";
-import {titlePages} from "../../../../modal/configs/text";
+import {
+    gitImageUrl,
+    instaImageUrl,
+    langEngUrl, langRusUrl,
+    scetchfabeImageUrl,
+    telegramImageUrl
+} from "../../../../modal/configs/images";
 import {BodyPopoutMenu, ButtonLink} from "./styled";
 import {globalContext} from "../../../../modal/context";
+import {useTranslate} from "../../../../locales/useLocales";
+import {RootState} from "../../../../store";
+import {useAppDispatch} from "../../../../modal/hooks/appDispatch";
+import {changeLang} from "../../../../modal/context/reducer/settingsSlice";
+import {useSelector} from "react-redux";
 
 interface propsI {
 }
 
-const listName: Array<string> = [titlePages.equine, titlePages.programming, titlePages.project];
+const listName: Array<string> = ["equinePage", "programmingPage", "projectsPage"];
 const listUrls: Array<string> = ['/equine', '/programming', '/project']
+
+const langSelector = (root: RootState) => root.settings.lang
 const MenuPopup = ({}:propsI):JSX.Element => {
-    const {actions} = useContext(globalContext)
+    const translate = useTranslate()
+    const dispatch = useAppDispatch()
+
+    const {form, actions} = useContext(globalContext)
+    const lang = useSelector(langSelector)
 
     const closePopup = () => {
         actions.showMenu && actions.showMenu(false)
     }
 
     return (
-        <BodyPopoutMenu onClick={closePopup} >
-            <div className={"body"} >
+        <BodyPopoutMenu show={form.menu} onClick={closePopup} >
+            <div className={"body"}>
                 {listName.map((name, i) => (
-                    <ButtonLink  to={listUrls[i]}><h4 id={name} >{name}</h4></ButtonLink>
+                    <ButtonLink to={listUrls[i]}><h4 id={name}>{translate(`${name}.title`)}</h4></ButtonLink>
                 ))}
+                <img
+                    className={"lang"}
+                    src={lang === "en" ? langEngUrl: langRusUrl}
+                    alt={'lang'}
+                    onClick={() => dispatch(changeLang(lang === "en" ? "ru" : "en"))}
+                />
                 <div className={"bodyImagesUrls"}>
-                    <img src={gitImageUrl} height={'100%'} alt={'gitHub'} onClick={() => openUrl(gitUrl)} />
-                    <img src={scetchfabeImageUrl} height={'100%'} alt={'gitHub'} onClick={() => openUrl(scetchfabUrl)} />
-                    <img src={telegramImageUrl} height={'100%'} alt={'VK'} onClick={() => openUrl(telegramUrl)} />
-                    <img src={instaImageUrl} height={'100%'} alt={'Insta'} onClick={() => openUrl(instaUrl)} />
+                    <img src={gitImageUrl} height={'100%'} alt={'gitHub'} onClick={() => openUrl(gitUrl)}/>
+                    <img src={scetchfabeImageUrl} height={'100%'} alt={'gitHub'} onClick={() => openUrl(scetchfabUrl)}/>
+                    <img src={telegramImageUrl} height={'100%'} alt={'VK'} onClick={() => openUrl(telegramUrl)}/>
+                    <img src={instaImageUrl} height={'100%'} alt={'Insta'} onClick={() => openUrl(instaUrl)}/>
                 </div>
             </div>
         </BodyPopoutMenu>

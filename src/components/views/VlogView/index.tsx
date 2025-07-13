@@ -5,7 +5,7 @@ import img2 from "../../../media/vlog/horse.jpg"
 import img3 from "../../../media/vlog/uniity.jpg"
 import img4 from "../../../media/vlog/vr.jpg"
 import Content from "./components/Content";
-import {Title} from "./components/Title";
+import {TitleUI} from "../../public/Title";
 
 const listImages = [img1, img2, img3, img4]
 const BlogView = () => {
@@ -13,7 +13,7 @@ const BlogView = () => {
     return (
         <BodyVlog>
             <BannerImage src={listImages} />
-            <Title />
+            <TitleUI title={"vlog"} />
             <Content />
         </BodyVlog>
     )

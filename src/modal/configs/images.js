@@ -1,4 +1,7 @@
 import diplom from '../../media/diplom.jpg'
+import bjProj from "../../media/bg.jpg";
+import expEquine from "../../media/equine/IMG_0451.JPG";
+import sportEquine from "../../media/equine/photo-2020-12-21-17-02-29-540x1080.jpeg";
 
 let logoImageUrl = './data/media/logo.ico';
 let menuImageUrl = 'http://cdn.onlinewebfonts.com/svg/img_56274.png';
@@ -7,6 +10,10 @@ let scetchfabeImageUrl = 'https://static.sketchfab.com/static/builds/web/dist/st
 let playImageUrl = 'https://www.freeiconspng.com/uploads/play-button-icon-png-8.png';
 let telegramImageUrl = 'https://static.tildacdn.com/tild3134-6130-4630-a465-396432363262/telegram-logo.png';
 let instaImageUrl = 'https://w7.pngwing.com/pngs/623/523/png-transparent-instagram-logo-instagram-facebook-inc-youtube-organization-instagram.png';
+
+let langEngUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/330px-Flag_of_the_United_Kingdom_%281-2%29.svg.png';
+let langRusUrl = 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/330px-Flag_of_Russia.svg.png';
+
 let bgHomeUrl = 'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/ijt4igw1ft4-800x1200.jpeg';
 let bgEquineUrl = 'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/xaspejrjzf4-1600x1067.jpg';
 let bgProgUrl = 'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/img-20200829-75151-1643x924.jpg';
@@ -14,9 +21,9 @@ let bgProjUrl = 'https://lh3.googleusercontent.com/fife/AAWUweUw30hQsg5BPKoXL7Ed
 let bgProjSlider = 'https://lh3.googleusercontent.com/fife/AAWUweVr3FC8OP8Y2UUO3pTVCTRvVRxAY1NY8e5RiBOGpeRPJ2P1PofQweEW08H7RSZYDiMazz7B59vKD6n2EB1zDdzS2pXPjoWZuuZo0JKn8NZenvannvfJ9n7JBSCWf_ENL_I6IgPmq4_uZVbGEhwo2nvBGBC7PZG4kcmq2g-g1KOcRWGU_UG0iVK0Kaov9eFDBYkJTbGVeIqTyBLWRsydehuXRtLVNgS94ZooMeQvkxMQe0zFivIZr_ew5UQwzExN8k32k9XpS6L6XpWP1M6Sa3f4O3xIxsV9qjZYh_txCgRhUySdFjuhiCB5g2FiTUJRkE0RmRO1x5NuD_HUlDqDjkt8ZUhzuz3QXUKN_R-ES_rO1fZr4kztc3n7ZVGd5jVos_Iqdr3mqjRE5y-rKVbJnkiZuVIUWprOVosYC6UTyBURbYXiq31_WfM3XlsutZJclqAfv3_9z20k68TDZnD3VqyDqsv0wNbCIEVwwIHP-hGNlKLkXym12025a8PTtFP4TzivjHu6saQaLB_07p_OBTmwIMgKz6XMIRJv_UM-IzRICO66ryrz4I1DDRkrS733eDiUQFuqUBObL73t7xtJb-yC-9G8t_wgUoTAw7-2JNyDox5-YmbLNNx8zre3EPwxQ4DeJhAWg4y-I5pyP9sNzEpiFcUDC8Fp0zKk7LJMG9rMh1ufrKogimlb36ramhleHmGrSPgDNsrD7UXaNZ_gn_xcuo-ZiKUsMQ=w1920-h913-ft'
 let donatMenu = 'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/donat1.png'
 let listBgEquineSliders = [diplom,
-    'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/s1200.webp',
-    'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/photo-2020-12-21-17-02-29-540x1080.jpeg',
-    'https://v4x9gljxlqblzwzhinbuoq-on.drv.tw/Vkonyushne/my%20syte/assets/images/photo-2020-12-21-17-17-35-1024x1280.jpeg']
+    expEquine,
+    sportEquine,
+    ]
 let navbar = {
     images: [
         'https://lh3.googleusercontent.com/4bN2UWl2yRC0WAsMJ9OS40iA8QMdohTYCG5_pTuSOzCDdm2bbx-p5drj11N6VpdPOvsN9fw9nERPKY1xywJaMVc_dz6V989veC-i2FgQjT7JH3XYXTUswv-AnE4yvAvryrNPPGdaiUWlkup527x4WtVf60fYPT5sQre-jsoCg2I2rCKLVw0iru_SaEQ84tOekl7OOtAv0LtcQHwajlKmZ492fDhe0Z52oMtpophq5pbyO9S6QjX-0za6Jx3z-Jho5K5uCnWJZ0B4NIRMaRZvo2pfqDNloBwewu8_p0mdKyk66Hcley6lMpBz69x1o75zRDvpvGr2de306a7_R1UEuaZVDs4FuBlPo85LXP1v2N8FCUeuAuZdYSwxUyk9Ve6rTL3ztirN5OLMRB3CNOKDT5JD7RyeKDbou38AKwxn-AXdH1UlHWWWgANt39rhzas66-YIuy-YMYArObPyEqZcboK4qojW7PNAZnLFn_xjrGGZSV1Ee7ctD8Zx2sC8BtVP3mCZtPuF3gTWz78gZZSqlp6Ig8gI2Ac8yJb8Hv9d2tv6YZYMJmmgMd6KkSNcJSZJIwtGlIZ8Avge3h4kPzRFK2cV6SSm2PEkmkxqfAlBhD1o9AEmh_ehogmYRPk_PVFkYL2NTRlAq_gYvJMP7h1Hgzul-j1d2AQzgd0hKIKeOs5S9rhIOAZRkaUknzRUZY5QD2YLwOqmsUjygCduy5-vDAIS=w1088-h604-no?authuser=0',
@@ -32,6 +39,11 @@ let navbar = {
     ],
     ids: [0,1,2],
 };
+let listImageProjectSlider = [
+    "https://assets-global.website-files.com/6171b265e5c8aa59b42c3472/619fb5686c9b9b5f5a35020e_gumroad-og.png",
+    bjProj,
+    "https://vrchat.denishik.ru/static/media/worldsBG.d75753825047bca8a2e0.png"
+]
 
 
-export {bgProjSlider, navbar, playImageUrl, donatMenu, listBgEquineSliders, scetchfabeImageUrl, bgProjUrl, bgProgUrl, bgEquineUrl, bgHomeUrl, instaImageUrl, gitImageUrl, menuImageUrl, logoImageUrl, telegramImageUrl};
+export {langRusUrl,langEngUrl,bgProjSlider,listImageProjectSlider, navbar, playImageUrl, donatMenu, listBgEquineSliders, scetchfabeImageUrl, bgProjUrl, bgProgUrl, bgEquineUrl, bgHomeUrl, instaImageUrl, gitImageUrl, menuImageUrl, logoImageUrl, telegramImageUrl};

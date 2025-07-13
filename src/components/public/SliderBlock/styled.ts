@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import {FadeInSection} from "../FadeInSection";
 
-export const Body = styled.div`
+export const Body = styled(FadeInSection)`
   width: 100%;
   height: content-box;
   position: absolute;

@@ -28,14 +28,9 @@ export const titlePages = {
 }
 let listTitleProjectSlider = ['Gumroad', 'Projects', 'VRChat'];
 let listSpanProjectSlider = ['Gumroad products', 'List of Projects', 'List of Projects for VR Chat'];
-let listImageProjectSlider = [
-    "https://assets-global.website-files.com/6171b265e5c8aa59b42c3472/619fb5686c9b9b5f5a35020e_gumroad-og.png",
-    bjProj,
-    "https://vrchat.denishik.ru/static/media/worldsBG.d75753825047bca8a2e0.png"
-]
 
 let listButtonsProjectSlider = {
-    text: ['Redirect', 'Redirect', 'Redirect'],
+    text: ['redirect', 'redirect', 'redirect'],
     image: [
         playImageUrl,
         playImageUrl,
@@ -48,7 +43,6 @@ let listButtonsProjectSlider = {
 }
 
 export {
-    listImageProjectSlider,
     listButtonsProjectSlider,
     listSpanProjectSlider,
     listTitleProjectSlider,

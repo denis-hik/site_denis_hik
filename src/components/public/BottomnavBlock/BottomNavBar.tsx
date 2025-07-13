@@ -1,9 +1,9 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {navbar} from "../../modal/configs/images";
+import {navbar} from "../../../modal/configs/images";
 import {NavLink} from "react-router-dom";
-import nav0 from '../../media/nav0.png';
-import nav1 from '../../media/nav1.png';
-import nav2 from '../../media/nav2.png';
+import nav0 from '../../../media/nav0.png';
+import nav1 from '../../../media/nav1.png';
+import nav2 from '../../../media/nav2.png';
 import {Body} from "./styled";
 
 type Types = {
@@ -21,12 +21,11 @@ const BottomNavBar: React.FC<Types> = ({
    showHeight = 100,
    bottom,
    customId= 'root',
-    children
-                                       }) => {
+   children
+}) => {
 
     const [bodyCh, setBodyCh] = useState(<div/>);
     const [visible, setVisible] = useState(false);
-    const [render, setRender] = useState(0);
 
     const toggleVisible = useCallback(
         e => {
@@ -56,35 +55,31 @@ const BottomNavBar: React.FC<Types> = ({
         return () => {
             window.removeEventListener('scroll', toggleVisible, true);
         };
-    });
+    }, []);
 
-    useEffect(() => {
-        setRender(prev => ++prev);
-    }, [children])
+    if (!visible) return null;
 
     return (
-        <>
-            {visible && <Body>
-                <NavLink
-                    onClick={scrollToTop}
-                    to={navbar.urls[0]}
-                >
-                    <img alt={'block' + 0} src={nav0}/>
-                </NavLink>
-                <NavLink
-                    onClick={scrollToTop}
-                    to={navbar.urls[1]}
-                >
-                    <img alt={'block' + 1} src={nav1}/>
-                </NavLink>
-                <NavLink
-                    to={navbar.urls[2]}
-                    onClick={scrollToTop}
-                >
-                    <img alt={'block' + 2} src={nav2}/>
-                </NavLink>
-            </Body>}
-        </>
+        <Body>
+            <NavLink
+                onClick={scrollToTop}
+                to={navbar.urls[0]}
+            >
+                <img alt={'block' + 0} src={nav0}/>
+            </NavLink>
+            <NavLink
+                onClick={scrollToTop}
+                to={navbar.urls[1]}
+            >
+                <img alt={'block' + 1} src={nav1}/>
+            </NavLink>
+            <NavLink
+                to={navbar.urls[2]}
+                onClick={scrollToTop}
+            >
+                <img alt={'block' + 2} src={nav2}/>
+            </NavLink>
+        </Body>
     )
 }
 

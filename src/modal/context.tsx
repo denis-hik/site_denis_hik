@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from "react";
 import RequestDHCAPi from "./request";
+import {getAnalytics} from "./request/analitics";
+import {useAppDispatch} from "./hooks/appDispatch";
 
 type IForms = {
     menu: boolean
@@ -16,7 +18,6 @@ type IGlobalContextContext = {
         value: number,
         onChange?: (value: number) => void
     },
-    dataResume: TResponse["result"]["resume"]
     actions: {
         showMenu?: (show: boolean) => void
     }
@@ -28,26 +29,17 @@ const politicPasswordsContextInitialState: IGlobalContextContext = {
     scrollTop: {
         value: 0
     },
-    dataResume: [],
     actions: {}
 }
 
 export const globalContext = React.createContext<IGlobalContextContext>(politicPasswordsContextInitialState);
 export const GlobalContextProvider: React.FC<any> = ({children}) => {
-
+    const dispatch = useAppDispatch()
     const [showMenu, setShowMenu] = useState(false)
-    const [dataResume, setDataResume] = useState<TResponse["result"]["resume"]>([])
     const [scrollTop, setScrollTop] = useState<number>(0)
 
     useEffect(() => {
-        RequestDHCAPi<TResponse>({
-            url: "analytics", onSuccess: (data) => {
-                if (data?.status.indexOf("success") > -1) {
-                    localStorage.setItem("statistic", "1")
-                    setDataResume(data?.result?.resume || [])
-                }
-            }
-        })
+        dispatch(getAnalytics())
     }, []);
 
     return (
@@ -59,7 +51,6 @@ export const GlobalContextProvider: React.FC<any> = ({children}) => {
                 value: scrollTop,
                 onChange: setScrollTop
             },
-            dataResume,
             actions: {
                 showMenu: setShowMenu
             }

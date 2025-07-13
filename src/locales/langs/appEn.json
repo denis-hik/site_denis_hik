@@ -1,0 +1,52 @@
+{
+  "homePage": {
+    "author": "Denis Hik",
+    "span0": "Project Developer,",
+    "span1": "Horse Trainer"
+  },
+  "equinePage": {
+    "title": "Horseback Riding Sport",
+    "titles": {
+      "0": "Horse Trainer",
+      "1": "Expirence of Horse",
+      "2": "Achievements"
+    },
+    "dess": {
+      "0": "Diploma of A Professional Degree for Trainer-Equestrian",
+      "1": "Expirence of Horse Riding 6-7 years. Skills: Horse Jumping, Galloping, Trotting, Walking and Roller Running",
+      "2": "Took part in Contests at Show-Jumping and Basic Riding (dressage tests)"
+    }
+  },
+  "programmingPage": {
+    "experience": "Experience",
+    "title": "Programming",
+    "titles": {
+      "0": "Knowledge of Programming Languages",
+      "1": "Frontend-Developer",
+      "2": "Beautiful code"
+    },
+    "dess": {
+      "0": "Composing on Languages: Java (Android Apps), Python, Java-Script(React, TS, Redux), Unity 2019 (C#, U#)",
+      "1": "My goal to achive a High Level of Skills in Frontend-Development",
+      "2": "I manage a Beautiful and Transparent Code"
+    }
+  },
+  "projectsPage": {
+    "title": "Projects",
+    "titles": {
+      "0": "Gumroad",
+      "1": "Projects",
+      "2": "VRChat"
+    },
+    "dess": {
+      "0": "Gumroad products",
+      "1": "List of Projects",
+      "2": "List of Projects for VR Chat"
+    }
+  },
+  "buttons": {
+    "redirect": "Redirect",
+    "github": "GitHub",
+    "insta": "Instagram"
+  }
+}

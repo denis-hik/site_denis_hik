@@ -1,0 +1,1 @@
+export type TState = "idle" | "loading" | "success" | "failed"

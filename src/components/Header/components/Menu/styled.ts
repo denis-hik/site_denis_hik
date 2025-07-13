@@ -1,15 +1,19 @@
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 
-export const BodyPopoutMenu = styled.div `
-  width: 100vh;
-  height: 100vh;
+export const BodyPopoutMenu = styled.div<{show: boolean}> `
+  width: ${props => props.show ? "100vw" : "0vw"};
+  height: ${props => props.show ? "100vh" : "0vh"};
   background-color: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  right: 0;
-  top: 0;
+  position: ${props => props.show ? "fixed" : "absolute"};
+  right: ${props => props.show ? "0" : "-100vw"};
+  top: ${props => props.show ? "0" : "-100vh"};
+  opacity: ${props => props.show ? "1" : "0"};
+  transition: opacity 0.3s ease-in-out;
 
   .body {
+    opacity: ${props => props.show ? "1" : "0"};
+    transition: opacity 0.3s ease-in-out;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -17,10 +21,24 @@ export const BodyPopoutMenu = styled.div `
     padding: 5px;
     background-color: #f1f1f1;
     border-radius: 10px;
-    position: fixed;
-    right: 10px;
-    top: 10px;
-
+    position: ${props => props.show ? "fixed" : "absolute"};
+    right: ${props => props.show ? "10px" : "-100vw"};
+    top: ${props => props.show ? "10px" : "-100vh"};
+      
+    .lang {
+        object-fit: fill;
+        border-radius: 20px;
+        max-height: 30px;
+        margin-bottom: 10px;
+        opacity: 1;
+        cursor: pointer;
+        
+        &:hover {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0.7;
+        }
+    }
+      
     .bodyImagesUrls {
       height: 30px;
       display: flex;
@@ -69,9 +87,15 @@ export const ButtonLink = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 
   .active {
     text-decoration: underline;
+  } 
+    
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
   }
 
   @media (max-width: 650px) {

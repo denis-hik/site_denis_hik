@@ -5,7 +5,7 @@ import EquineView from "./components/views/EquineView/Equine";
 import ProgrammingView from "./components/views/ProgrammingView/Programming";
 import Header from "./components/Header/Header";
 import ProjectsView from "./components/views/ProjectsView/Projects";
-import BottomNavBar from "./components/BottomnavBlock/BottomNavBar";
+import BottomNavBar from "./components/public/BottomnavBlock/BottomNavBar";
 import {Scrollbars} from 'react-custom-scrollbars-2';
 import {globalContext, GlobalContextProvider} from "./modal/context";
 import './App.css';
@@ -13,7 +13,7 @@ import BlogView from "./components/views/VlogView";
 import {Navigate, Route, Routes} from "react-router-dom";
 
 const App: React.FC = () => {
-    const {form, scrollTop} = useContext(globalContext)
+    const {scrollTop} = useContext(globalContext)
     return (
             <Scrollbars
                 autoHide
@@ -31,7 +31,7 @@ const App: React.FC = () => {
                         <Route path='/blog' Component={BlogView}/>
                         <Route path="*" Component={() => <Navigate to="/" replace={true} />} />
                     </Routes>
-                    {form.menu && <MenuPopup/>}
+                    <MenuPopup/>
                     <BottomNavBar
                         showHeight={50}
                         customId={'display'}

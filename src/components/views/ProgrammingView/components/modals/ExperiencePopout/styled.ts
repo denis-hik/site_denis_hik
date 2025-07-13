@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BodyPopout = styled.div `
+export const BodyPopout = styled.div<{visible?: boolean}>`
   position: fixed;
   left: 0;
   top: 0;
@@ -11,6 +11,12 @@ export const BodyPopout = styled.div `
   justify-content: center;
   align-items: center;
   z-index: 999;
+    
+  ${({ visible }) =>
+    !visible && `
+    opacity: 0;
+    display: none;
+  `}
   
   .panel {
     position: fixed;
