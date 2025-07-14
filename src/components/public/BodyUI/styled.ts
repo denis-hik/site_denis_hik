@@ -45,5 +45,5 @@ export const ImageDiv = styled.div<{image?:string}>`
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: ${props => props?.src};
+  background-image: ${props => props?.image};
 `

@@ -28,7 +28,7 @@ const ProjectsView = ():JSX.Element => {
             <TitleUI
                 style={{color: "#fff"}}
                 title={translate("title")}
-                defaultBottom={786}
+                defaultBottom={window.innerHeight}
             />
             <Slider
                 button={{

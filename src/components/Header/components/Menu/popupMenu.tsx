@@ -19,8 +19,13 @@ import {useSelector} from "react-redux";
 interface propsI {
 }
 
-const listName: Array<string> = ["equinePage", "programmingPage", "projectsPage"];
-const listUrls: Array<string> = ['/equine', '/programming', '/project']
+const listName: Array<string> = [
+    "equinePage",
+    "programmingPage",
+    "projectsPage",
+    // "modelsPage"
+];
+const listUrls: Array<string> = ['/equine', '/programming', '/project', "/modeling"]
 
 const langSelector = (root: RootState) => root.settings.lang
 const MenuPopup = ({}:propsI):JSX.Element => {
@@ -40,12 +45,19 @@ const MenuPopup = ({}:propsI):JSX.Element => {
                 {listName.map((name, i) => (
                     <ButtonLink to={listUrls[i]}><h4 id={name}>{translate(`${name}.title`)}</h4></ButtonLink>
                 ))}
-                <img
+                <div
                     className={"lang"}
-                    src={lang === "en" ? langEngUrl: langRusUrl}
-                    alt={'lang'}
                     onClick={() => dispatch(changeLang(lang === "en" ? "ru" : "en"))}
-                />
+                >
+                    <img
+                        src={lang !== "en" ? langEngUrl : langRusUrl}
+                        alt={'lang'}
+                    />
+                    {translate(`lang.${lang === "en" ? "ru" : "en"}`)}
+                    <img
+                        className={"hidden"}
+                    />
+                </div>
                 <div className={"bodyImagesUrls"}>
                     <img src={gitImageUrl} height={'100%'} alt={'gitHub'} onClick={() => openUrl(gitUrl)}/>
                     <img src={scetchfabeImageUrl} height={'100%'} alt={'gitHub'} onClick={() => openUrl(scetchfabUrl)}/>

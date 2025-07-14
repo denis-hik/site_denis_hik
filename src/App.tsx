@@ -11,6 +11,7 @@ import {globalContext, GlobalContextProvider} from "./modal/context";
 import './App.css';
 import BlogView from "./components/views/VlogView";
 import {Navigate, Route, Routes} from "react-router-dom";
+import ModelsView from "./components/views/ModelsView/ModelsView";
 
 const App: React.FC = () => {
     const {scrollTop} = useContext(globalContext)
@@ -27,6 +28,7 @@ const App: React.FC = () => {
                         <Route path='/' Component={HomeView}/>
                         <Route path='/equine' Component={EquineView}/>
                         <Route path='/programming' Component={ProgrammingView}/>
+                        <Route path='/modeling' Component={ModelsView}/>
                         <Route path='/project' Component={ProjectsView}/>
                         <Route path='/blog' Component={BlogView}/>
                         <Route path="*" Component={() => <Navigate to="/" replace={true} />} />

@@ -23,7 +23,7 @@ const Equine = () => {
                 <TitleUI
                     style={{color: "#fff"}}
                     title={translate("title")}
-                    defaultBottom={786}
+                    defaultBottom={window.innerHeight}
                 />
                 <Slider
                     list={listEquine}

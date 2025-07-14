@@ -26,16 +26,35 @@ export const BodyPopoutMenu = styled.div<{show: boolean}> `
     top: ${props => props.show ? "10px" : "-100vh"};
       
     .lang {
-        object-fit: fill;
+        background-color: rgb(218, 217, 217);
         border-radius: 20px;
         max-height: 30px;
         margin-bottom: 10px;
-        opacity: 1;
         cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        opacity: 1;
+        gap: 10px;
+        transition: opacity 0.3s ease-in-out;
+        transition: color 0.2s ease;
+        .hidden {
+            opacity: 0;
+        }
+        
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: fill;
+        }
         
         &:hover {
-            transition: opacity 0.3s ease-in-out;
+            color: #0077ff;
             opacity: 0.7;
+            img {
+            }
         }
     }
       
@@ -47,7 +66,12 @@ export const BodyPopoutMenu = styled.div<{show: boolean}> `
       justify-content: space-around;
 
       img {
+        transition: opacity 0.3s ease-in-out;
         cursor: pointer;
+        opacity: 1;
+        &:hover {
+          opacity: 0.7;
+        }
       }
     }
   }

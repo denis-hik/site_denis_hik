@@ -48,5 +48,9 @@
     "redirect": "Redirect",
     "github": "GitHub",
     "insta": "Instagram"
+  },
+  "lang": {
+    "en": "English",
+    "ru": "Русский"
   }
 }

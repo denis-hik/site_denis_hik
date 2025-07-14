@@ -12,7 +12,6 @@ export const TitleBody = styled.div<{bottom: number, defaultBottom: number}>`
   z-index: ${props => getAgreeShow(props.bottom, props.defaultBottom) ? "1" : "-999"};
   border-radius: 10px;
   gap: 10px;
-  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
